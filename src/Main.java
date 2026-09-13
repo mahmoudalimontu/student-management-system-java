@@ -42,19 +42,23 @@ void main() {
 
             case 4:
                 int id, grade;
-                String name;
+                String name,email;
 
                 System.out.print("Enter Student ID: ");
                 id = in.nextInt();
 
                 System.out.print("Enter Student Name: ");
-                in.nextLine();
+                in.nextLine(); // to ignore white spaces and '\n'
                 name = in.nextLine();
 
                 System.out.print("Enter Student Grade: ");
                 grade = in.nextInt();
 
-                updateStudent(students, id, name, grade);
+                System.out.print("Enter Student Email: ");
+                in.nextLine();
+                email = in.nextLine();
+
+                updateStudent(students, id, name, grade,email);
                 break;
 
             case 5:
@@ -77,7 +81,7 @@ void main() {
 boolean addStudent(ArrayList<Student> list,Scanner in) {
 
     int id,grade;
-    String name;
+    String name,email;
     System.out.println("Enter Student ID: ");
     id=in.nextInt();
     System.out.println("Enter Student Name: ");
@@ -85,15 +89,18 @@ boolean addStudent(ArrayList<Student> list,Scanner in) {
     name=in.nextLine();
     System.out.println("Enter Student Grade: ");
     grade=in.nextInt();
+    System.out.println("Enter Student Email: ");
+    in.nextLine();
+    email=in.nextLine();
     if(searchStudentById(list,id)==null)
     {
-        Student added=new Student(id,name,grade);
+        Student added=new Student(id,name,grade,email);
         list.add(added);
         return true;
     }
     return false;
 }
-void updateStudent(ArrayList<Student>list,int id,String name,int grade)
+void updateStudent(ArrayList<Student>list,int id,String name,int grade,String email)
 {
     Student find=searchStudentById(list,id);
     if(find==null)
@@ -102,6 +109,7 @@ void updateStudent(ArrayList<Student>list,int id,String name,int grade)
     {
         find.setName(name);
         find.setGrade(grade);
+        find.setEmail(email);
         System.out.println("Student updated successfully.");
     }
 }

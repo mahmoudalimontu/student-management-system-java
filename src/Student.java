@@ -1,26 +1,14 @@
-public class Student {
+public class Student extends Person {
     private int id;
-    private String name;
     private int grade;
-
-
 
     // Constructors
     public Student() {}
-    public Student(int id, String name, int grade) {
+    public Student(int id, String name,int grade,String email) {
+        super(name,email);
         this.id = id;
-        this.name = name;
         this.grade = grade;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getId() {
         return id;
     }
@@ -37,10 +25,12 @@ public class Student {
         this.grade = grade;
     }
 
+    @Override
     public void displayInfo()
     {
         System.out.println("Student ID: "+id);
-        System.out.println("Student Name: "+name);
+        System.out.println("Student Name: "+getName());
         System.out.println("Student Grade: "+grade);
+        System.out.println("Student Email: "+getEmail());
     }
 }
