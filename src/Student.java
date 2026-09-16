@@ -9,6 +9,11 @@ public class Student extends Person {
         this.id = id;
         this.grade = grade;
     }
+    public Student(int id,String name)
+    {
+        super(name,"");
+        this.id=id;
+    }
     public int getId() {
         return id;
     }
@@ -25,12 +30,17 @@ public class Student extends Person {
         this.grade = grade;
     }
 
-    @Override
-    public void displayInfo()
+    public void displayInfo(boolean showEmail)
     {
         System.out.println("Student ID: "+id);
         System.out.println("Student Name: "+getName());
         System.out.println("Student Grade: "+grade);
-        System.out.println("Student Email: "+getEmail());
+        if(showEmail)
+            System.out.println("Student Email: "+getEmail());
+    }
+    @Override
+    public void displayInfo()
+    {
+        displayInfo(true);
     }
 }
