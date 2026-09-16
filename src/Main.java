@@ -82,7 +82,7 @@ void main() {
 void testPolymorphism()
 {
     ArrayList<Person> people=new ArrayList<>();
-    people.add(new Person("Mohamed Ahmed","MOh@gmail.com"));
+    people.add(new Student(2,"Mohamed Ahmed",13,"MOh@gmail.com"));
     people.add(new Student(1,"Mahmoud Ali",17,"mahmoud1@gmail.com"));
     people.add(new Teacher("Ali Omran","aliomran32@gmail.com","Math",1176.34));
 

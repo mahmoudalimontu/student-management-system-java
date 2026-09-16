@@ -1,4 +1,4 @@
-public class Person {
+public abstract class Person {
     private String name,email;
     Person(){}
     Person(String name,String email)
@@ -6,7 +6,6 @@ public class Person {
         this.name=name;
         this.email=email;
     }
-
     public String getEmail() {
         return email;
     }
@@ -22,9 +21,5 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
-    void displayInfo()
-    {
-        System.out.println("Person Name: "+name);
-        System.out.println("Person Email: "+email);
-    }
+    abstract void displayInfo();
 }
