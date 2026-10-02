@@ -1,4 +1,4 @@
-public class Teacher extends Person{
+public class Teacher extends Person implements Payable{
     private String subject;
     private double salary;
     public Teacher(){}
@@ -32,5 +32,13 @@ public class Teacher extends Person{
         System.out.println("Teacher Email: "+getEmail());
         System.out.println("Teacher Subject: "+subject);
         System.out.println("Teacher Salary: "+salary);
+    }
+
+    @Override
+    public double calculatePayment() {
+        double bonus;
+        if(salary>=6000)bonus=0.10;
+        else bonus=0.15;
+        return salary + (salary*bonus);
     }
 }

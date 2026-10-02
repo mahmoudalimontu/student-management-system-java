@@ -1,5 +1,6 @@
 
 void main() {
+         testPolymorphism();
     Scanner in =new Scanner(System.in);
     ArrayList<Student> students = new ArrayList<>();
     while(true)
@@ -85,12 +86,15 @@ void testPolymorphism()
     people.add(new Student(2,"Mohamed Ahmed",13,"MOh@gmail.com"));
     people.add(new Student(1,"Mahmoud Ali",17,"mahmoud1@gmail.com"));
     people.add(new Teacher("Ali Omran","aliomran32@gmail.com","Math",1176.34));
-
+    people.add(new GraduateStudent(3,"Mohamed Elkhayat",22,"moha@gmail.com","phd"));
     for(var i:people)
     {
         i.displayInfo();
         System.out.println("\n###########################\n");
     }
+
+    Teacher prof=new Teacher("Ali Omran","aliomran32@gmail.com","Math",1176.34);
+    System.out.println(prof.calculatePayment());
 }
 boolean addStudent(ArrayList<Student> list,Scanner in) {
 
